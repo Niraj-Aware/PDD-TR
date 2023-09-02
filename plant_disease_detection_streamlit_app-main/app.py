@@ -6,7 +6,7 @@ import tensorflow as tf
 import base64
 import cv2
 
-MODEL = tf.keras.models.load_model('potato.h5')
+POTATO_MODEL = tf.keras.models.load_model('potato.h5')
 TOMATO_MODEL = tf.keras.models.load_model('tomato.h5')
 PEEPER_MODEL = tf.keras.models.load_model('pepper.h5')
 class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
@@ -40,7 +40,7 @@ async def potato():
         st.image(image, caption="Uploaded Image", width=250)
         image = read_file_as_image(image)
         image_batch = np.expand_dims(image, axis=0)
-        predictions = MODEL.predict(image_batch)
+        predictions = POTATO_MODEL.predict(image_batch)
         predicted_class = class_names[np.argmax(predictions[0])]
         confidence = np.max(predictions[0])
         print("prediction", class_names[np.argmax(predictions)])
