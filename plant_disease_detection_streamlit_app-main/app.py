@@ -5,9 +5,10 @@ from PIL import Image
 import tensorflow as tf
 import base64
 import cv2
-MODEL = tf.keras.models.load_model('./potato_trained_models/1/')
-TOMATO_MODEL = tf.keras.models.load_model('./tomato_trained_models/1')
-PEEPER_MODEL = tf.keras.models.load_model('./pepper_trained_models/1')
+
+MODEL = tf.keras.models.load_model('potato.h5')
+TOMATO_MODEL = tf.keras.models.load_model('tomato.h5')
+PEEPER_MODEL = tf.keras.models.load_model('pepper.h5')
 class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
 Tomato_classes = ['Tomato_healthy', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato_Septoria_leaf_spot',
  'Tomato__Tomato_mosaic_virus', 'Tomato_Leaf_Mold', 'Tomato_Bacterial_spot', 'Tomato_Late_blight',
