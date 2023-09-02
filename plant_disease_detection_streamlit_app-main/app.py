@@ -9,6 +9,7 @@ import cv2
 POTATO_MODEL = tf.keras.models.load_model('potato.h5')
 TOMATO_MODEL = tf.keras.models.load_model('tomato.h5')
 PEEPER_MODEL = tf.keras.models.load_model('pepper.h5')
+
 class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
 Tomato_classes = ['Tomato_healthy', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato_Septoria_leaf_spot',
  'Tomato__Tomato_mosaic_virus', 'Tomato_Leaf_Mold', 'Tomato_Bacterial_spot', 'Tomato_Late_blight',
@@ -22,7 +23,7 @@ st.title("Plant Disease Detection")
 st.write("This application is detecting disease in three plants photato, tomato and pepper")
 options = ["Select One Plant","Tomato", "Potato", "Pepper"]
 
-    # Create a selectbox for the user to choose one option
+# Create a selectbox for the user to choose one option
 selected_option = st.selectbox("Select Plant:", options)
 
 # st.write("You selected:", selected_option)
@@ -87,6 +88,6 @@ if __name__ == "__main__":
         elif selected_option == 'Tomato':
             asyncio.run(tomato())
         elif selected_option == 'pepper':
-                asyncio.run(pepper())
+            asyncio.run(pepper())
         else:
             st.write("not avalible")
