@@ -8,12 +8,13 @@ import base64
 import cv2
 
 # Load models and class names
-MODEL = tf.keras.models.load_model('./potato_trained_models/1/')
+#MODEL = tf.keras.models.load_model('./potato_trained_models/1/')
+MODEL = tf.keras.models.load_model('tomato.h5')
 TOMATO_MODEL = tf.keras.models.load_model('./tomato_trained_models/1')
 #TOMATO_MODEL = tf.keras.models.load_model('tomato.h5')
 PEPPER_MODEL = tf.keras.models.load_model('./pepper_trained_models/1')
 class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
-Tomato_classes = ['Tomato_healthy', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato_Septoria_leaf_spot',
+tomato_classes = ['Tomato_healthy', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato_Septoria_leaf_spot',
  'Tomato__Tomato_mosaic_virus', 'Tomato_Leaf_Mold', 'Tomato_Bacterial_spot', 'Tomato_Late_blight',
  'Tomato_Early_blight', 'Tomato__Tomato_YellowLeaf__Curl_Virus']
 pepper_classes = ['pepper_healthy', 'pepper_bell_bacterial_spot']
@@ -174,7 +175,7 @@ def detect_disease(model, class_names):
 if selected_option == 'Potato':
     detect_disease(MODEL, class_names)
 elif selected_option == 'Tomato':
-    detect_disease(TOMATO_MODEL, Tomato_classes)
+    detect_disease(TOMATO_MODEL, tomato_classes)
 elif selected_option == 'Pepper':
     detect_disease(PEPPER_MODEL, pepper_classes)
 else:
