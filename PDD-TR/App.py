@@ -7,7 +7,7 @@ import tensorflow as tf
 import cv2
 
 # Load models and class names
-MODEL = tf.keras.models.load_model('./potato_trained_models/1/')
+MODEL = tf.keras.models.load_model('./potato_trained_models/1')
 TOMATO_MODEL = tf.keras.models.load_model('./tomato_trained_models/1')
 #TOMATO_MODEL = tf.keras.models.load_model('tomato.h5')
 PEPPER_MODEL = tf.keras.models.load_model('./pepper_trained_models/1')
