@@ -1,10 +1,10 @@
-!/usr/bin/env python
 # Import necessary libraries
 import streamlit as st
 import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+import base64
 import cv2
 
 # Load models and class names
