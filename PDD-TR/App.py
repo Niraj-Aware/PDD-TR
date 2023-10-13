@@ -1,3 +1,4 @@
+!/usr/bin/env python
 # Import necessary libraries
 import streamlit as st
 import numpy as np
